@@ -1,144 +1,50 @@
-# Kickly — Advanced Kick.com Stream Overlay 🚀
-
-![Kickly Banner](assets/kicklyLogo.png)
+# Kickly v0.4 - Standalone Release & New Features / Bağımsız Sürüm ve Yeni Özellikler 🚀
 
 [![Release](https://img.shields.io/github/v/release/YourAnonELF/Kickly?label=Release&style=for-the-badge)](https://github.com/YourAnonELF/Kickly/releases)
 [![Actions](https://img.shields.io/github/actions/workflow/status/YourAnonELF/Kickly/release.yml?branch=main&label=Actions&style=for-the-badge)](https://github.com/YourAnonELF/Kickly/actions)
 [![License](https://img.shields.io/github/license/YourAnonELF/Kickly?label=License&style=for-the-badge)](LICENSE)
 
-Kickly is a lightweight, standalone stream overlay tailored for Kick.com streamers. It provides a transparent, click-through chat overlay with features such as Gift Leaderboards, Interactive Mode, and hot-reload configuration.
+We are excited to announce **Kickly v0.4**! This release transforms Kickly into a fully standalone application, meaning you no longer need to install Python to run it. We've also added powerful new features like the Gift Leaderboard and Interactive Mode.
 
-Kickly, Kick.com yayıncıları için özel tasarlanmış, hafif ve bağımsız bir yayın katmanıdır. Şeffaf, tıklama geçişli (click-through) sohbet penceresi, Hediye Lider Tablosu, Etkileşim Modu ve anlık yapılandırma (hot-reload) gibi özellikler sunar.
-
----
-
-## Table of contents / İçindekiler
-- Features / Özellikler
-- Quick demo / Hızlı demo
-- Installation / Kurulum
-- Usage / Kullanım
-- Components / Bileşenler
-- Configuration & Themes / Yapılandırma ve Temalar
-- Hotkeys / Kısayollar
-- Releases / Sürüm Yayınlama
-- Troubleshooting / Sorun Giderme
-- Contributing / Katkıda Bulunma
-- Changelog / Değişiklikler
-- License / Lisans
+**Kickly v0.4** sürümünü duyurmaktan heyecan duyuyoruz! Bu sürümle Kickly tamamen bağımsız bir uygulamaya dönüştü; artık çalıştırmak için Python yüklemenize gerek yok. Ayrıca Hediye Lider Tablosu ve Etkileşim Modu gibi güçlü yeni özellikler ekledik.
 
 ---
 
-## 🌟 Features / Özellikler
+## ✨ New Features / Yeni Özellikler
 
-- Transparent overlay — Chat floats over the game without blocking view.  
-  Şeffaf overlay — Sohbet oyununuzun üzerinde, görüşü engellemeden görünür.
-- Click-through — Clicks pass through to the game window.  
-  Tıklama geçişi — Tıklamalar doğrudan oyuna iletilir.
-- Interactive Mode (Alt+N) — Enable to type messages or interact with controls.  
-  Etkileşim Modu (Alt+N) — Sohbet yazmak veya kontrollerle etkileşim için.
-- Gift Leaderboard — Highlights top gifters in real time.  
-  Hediye Lider Tablosu — En çok hediye gönderenleri canlı olarak vurgular.
-- Hot-reload configuration — Changes apply instantly without restarting the overlay.  
-  Canlı ayarlar — Değişiklikler overlay'i yeniden başlatmadan anında uygulanır.
-- Theme support via `.qss` files — Fully customizable appearance.  
-  `.qss` tema desteği — Görünüm tamamen özelleştirilebilir.
+### 📦 Standalone Executables / Bağımsız Uygulamalar
+Kickly is now packaged into 3 easy-to-run files. No coding knowledge required!
+Kickly artık çalıştırılması kolay 3 dosya halinde paketlendi. Kodlama bilgisi gerekmez!
+- **Kickly Backend.exe**: Connects to Kick.
+- **Kickly Overlay.exe**: The transparent chat overlay.
+- **Kickly Config.exe**: Settings manager.
 
----
+### 👑 Gift Leaderboard / Hediye Lider Tablosu
+- **Top Gifter Display**: The overlay now automatically detects and displays the top gifter of the session in **Gold** text in the header.
+- **En Çok Hediye Gönderen**: Overlay artık oturumun en çok hediye gönderenini (Top Gifter) otomatik olarak algılar ve başlıkta **Altın** rengiyle gösterir.
 
-## 📺 Quick demo / Hızlı demo
+### 🎮 Interactive Mode / Etkileşim Modu (`Alt + N`)
+- **Toggle Interaction**: Press `Alt + N` to switch between "Click-Through" (Game Mode) and "Interactive Mode".
+- **Features**: In Interactive Mode, you can type in chat, click buttons, and scroll through message history.
+- **Etkileşim Geçişi**: "Tıklama Geçişi" (Oyun Modu) ve "Etkileşim Modu" arasında geçiş yapmak için `Alt + N` tuşlarına basın.
+- **Özellikler**: Etkileşim modunda sohbete yazı yazabilir, butonlara tıklayabilir ve mesaj geçmişini kaydırabilirsiniz.
 
-![demo gif](docs/demo.gif)
-
----
-
-## 📦 Installation / Kurulum
-
-1. Download the official release assets from the GitHub Releases page.  
-   Resmi sürüm paketlerini GitHub Releases sayfasından indirin.
-2. Extract the ZIP file to a folder (e.g., Desktop).  
-   ZIP dosyasını bir klasöre çıkarın (örn. Masaüstü).
-3. Run the executables in this order:
-   - Kickly Backend.exe — start FIRST (a browser window may open for authentication).  
-     Backend.exe — ÖNCE çalıştırın (giriş için tarayıcı penceresi açılabilir).
-   - Kickly Overlay.exe — start SECOND (after backend connection).  
-     Overlay.exe — BACKEND bağlandıktan SONRA çalıştırın.
-   - Kickly Config.exe — optional, can be opened anytime to edit themes and settings.  
-     Config.exe — İsteğe bağlı, temaları ve ayarları düzenlemek için her zaman açılabilir.
-
-Note: Distribute releases with versioned filenames (e.g., `kickly-v1.2.0-windows.zip`) and include checksums for integrity when possible.
+### ⚡ Config Hot-Reload / Anında Ayar Yenileme
+- **Instant Updates**: Change your theme, opacity, window size, or position using `Kickly Config.exe`, and the Overlay will update **instantly** without restarting.
+- **Anında Güncelleme**: `Kickly Config.exe` kullanarak temanızı, opaklığı, pencere boyutunu veya konumunu değiştirin; Overlay yeniden başlatmaya gerek kalmadan **anında** güncellenir.
 
 ---
 
-## 🚀 Usage / Kullanım
+## 🛠️ Technical Improvements / Teknik İyileştirmeler
 
-1. Run Kickly Backend.exe and authenticate on Kick.com if prompted.  
-   Backend’i başlatın ve gerekiyorsa Kick.com ile kimlik doğrulaması yapın.
-2. Run Kickly Overlay.exe once the backend is connected; ensure the game is in Windowed or Borderless Windowed mode.  
-   Backend bağlıyken Overlay’i başlatın; oyunun Pencereli veya Çerçevesiz Pencereli modda olduğundan emin olun.
-3. Toggle Interactive Mode with Alt + N to type messages or click controls.  
-   Etkileşim Modunu açıp kapatmak için Alt + N tuşunu kullanın.
+- **PyInstaller Support**: Fixed compatibility issues with `rich` and `colorama` libraries to ensure smooth packaging. / Paketleme sorunlarını gidermek için `rich` ve `colorama` kütüphaneleriyle ilgili uyumluluk sorunları çözüldü.
+- **Websockets Fix**: Downgraded to `websockets==12.0` to resolve build errors. / Derleme hatalarını çözmek için `websockets` sürümü `12.0`'a düşürüldü.
+- **Refactoring**: Centralized channel logic for better stability. / Daha iyi kararlılık için kanal mantığı merkezileştirildi.
 
 ---
 
-## 🔧 Components / Bileşenler
+## 📥 How to Update / Nasıl Güncellenir?
 
-- Kickly Backend.exe — Connects to Kick.com and streams chat events.  
-  Kickly Backend — Kick.com ile bağlantı kurup sohbet verilerini alır.
-- Kickly Overlay.exe — Renders the transparent chat overlay and leaderboard.  
-  Kickly Overlay — Şeffaf sohbet katmanını ve lider tablosunu gösterir.
-- Kickly Config.exe — Theme and settings manager with hot-reload.  
-  Kickly Config — Tema ve ayar yöneticisi (anında uygulama).
-
----
-
-## 🎨 Configuration & Themes / Yapılandırma ve Temalar
-
-- Themes are stored as `.qss` files in `/themes`. Edit and save to apply changes live.  
-  Temalar `/themes` içinde `.qss` dosyaları olarak bulunur. Düzenleyip kaydedildiğinde değişiklikler anında uygulanır.
-- Keep font sizes and contrast accessible for viewers.
-
----
-
-## ⌨️ Hotkeys / Kısayollar
-
-- Alt + N — Toggle Interactive Mode (type messages, click controls).  
-  Alt + N — Etkileşim Modu aç/kapat.
-- Additional hotkeys can be customized via Kickly Config.exe.  
-  Ek kısayollar Kickly Config.exe üzerinden özelleştirilebilir.
-
----
-
-
-## ⚠️ Troubleshooting / Sorun Giderme
-
-- Anti-Virus false positives: Packaged Python apps (PyInstaller) can trigger AV heuristics. Add the Kickly folder to AV exclusions if a false positive occurs.  
-  Antivirüs uyarıları: PyInstaller ile paketlenmiş Python uygulamaları bazen AV tarafından işaretlenir. Yanlış pozitif durumunda Kickly klasörünü dışlamalara ekleyin.
-- Overlay not visible: Ensure the game runs in Windowed or Borderless Windowed mode; exclusive fullscreen may hide overlays.  
-  Overlay görünmüyorsa: Oyunu Pencereli veya Çerçevesiz Pencereli modda çalıştırın; Tam Ekran modu overlay'i gizleyebilir.
-- Backend connection lost: Restart Kickly Backend.exe and verify network connectivity.  
-  Backend bağlantısı kesildiyse: Backend.exe'yi yeniden başlatın ve ağ bağlantısını kontrol edin.
-
----
-
-## 🤝 Contributing / Katkıda Bulunma
-
-Contributions are welcome. Suggested workflow:
-1. Fork the repository.  
-2. Create a branch: `git checkout -b feat/your-feature`.  
-3. Use Conventional Commits (feat:, fix:, chore:) and include clear PR descriptions.  
-4. Open a Pull Request for review.
-
----
-
-## 🧾 Changelog / Değişiklikler
-
-Maintain a `CHANGELOG.md` using `standard-version` or `semantic-release` conventions to keep release notes structured and readable.
-
----
-
-## License / Lisans
-
-MIT License — Free to use, modify, and distribute.  
-MIT Lisansı — Kullanımı, değiştirilmesi ve dağıtımı serbesttir.
-
----
+1.  Download the `v0.4` ZIP file from Releases. / Releases kısmından `v0.4` ZIP dosyasını indirin.
+2.  Extract to a folder. / Bir klasöre çıkartın.
+3.  Run `Kickly Backend.exe` first, then `Kickly Overlay.exe`. / Önce `Kickly Backend.exe`, sonra `Kickly Overlay.exe` çalıştırın.
