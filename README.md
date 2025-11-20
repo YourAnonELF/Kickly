@@ -2,9 +2,9 @@
 
 ![Kickly Banner](assets/kicklyLogo.png)
 
-[![Release](https://img.shields.io/github/v/release/OWNER/REPO?label=release&style=for-the-badge)](https://github.com/OWNER/REPO/releases)
-[![Actions](https://img.shields.io/github/actions/workflow/status/OWNER/REPO/release.yml?branch=main&style=for-the-badge)](https://github.com/OWNER/REPO/actions)
-[![License](https://img.shields.io/github/license/OWNER/REPO?style=for-the-badge)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/YourAnonELF/Kickly?label=Release&style=for-the-badge)](https://github.com/YourAnonELF/Kickly/releases)
+[![Actions](https://img.shields.io/github/actions/workflow/status/YourAnonELF/Kickly/release.yml?branch=main&label=Actions&style=for-the-badge)](https://github.com/YourAnonELF/Kickly/actions)
+[![License](https://img.shields.io/github/license/YourAnonELF/Kickly?label=License&style=for-the-badge)](LICENSE)
 
 Kickly is a lightweight, standalone stream overlay tailored for Kick.com streamers. It provides a transparent, click-through chat overlay with features such as Gift Leaderboards, Interactive Mode, and hot-reload configuration.
 
